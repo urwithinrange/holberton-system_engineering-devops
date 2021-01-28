@@ -1,0 +1,1 @@
+This is a directory for the project 0x00-shell_basics
