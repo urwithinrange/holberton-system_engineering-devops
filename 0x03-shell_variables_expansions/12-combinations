@@ -1,0 +1,3 @@
+#!/bin/bash
+echo -e {a..z}{a..z} | tr '[:space:]' '\n' | grep -v 'oo'
+
