@@ -1,0 +1,5 @@
+Host vm
+     HostName 3.85.208.248 
+     User ubuntu
+     StrictHostKeyChecking no
+     IdentityFile ~/.ssh/holberton
