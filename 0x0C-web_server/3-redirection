@@ -7,7 +7,5 @@ sudo service nginx start
 echo "Holberton School" | sudo tee /var/www/html/index.nginx-debian.html
 searchscting = "^\tlocation / {"
 replacestring = "\tlocation /redirect_ {\n\t\return 301 \$scheme:https://www/youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n\n\tlocation / {"
-
 sudo sed -i "s@${searchstring}@${replacestring}@" /etc/ngnx/sites-available/default
-
 sudo service nginx restart
