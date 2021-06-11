@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# looking up info from stats
+
+printinfo() (
+        recordandIP=$(dig $2.$1 | grep -A1 'ANSWER SECTION:' | awk '{print $4,$5}')
+        record=$(echo $recordandIP | awk '{print $1}')
+        ip=$(echo $recordandIP | awk '{print $2}')
+        echo "The subdomain $2 is a $record record and points to $ip"
+)
+
+if [ $# -eq 1 ]; then
+        printinfo $1 www
+        printinfo $1 lb-01
+        printinfo $1 web-01
+        printinfo $1 web-02
+
+elif [ $# -eq 2 ]; then
+        printinfo $1 $2
+fi
