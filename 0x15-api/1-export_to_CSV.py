@@ -11,6 +11,7 @@ def save_tasks_to_csv(employeeId):
     """employee tasks save"""
     username = ''
     all_tasks = []
+
     user = "https://jsonplaceholder.typicode.com/users/"
     todo = "https://jsonplaceholder.typicode.com/users/"
     userRes = requests.get('{}{}'.format(user, employeeId))
@@ -25,9 +26,9 @@ def save_tasks_to_csv(employeeId):
         taskrow.append(username)
         taskrow.append(task.get("completed"))
         taskrow.append(task.get("title"))
-
         all_tasks.append(taskrow)
-        all_tasks.sort()
+
+    all_tasks.sort()
 
     with open("{}.csv".format(employeeId), 'w') as csvfile:
         csvwriter = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
