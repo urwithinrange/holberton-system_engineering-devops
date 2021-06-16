@@ -1,10 +1,13 @@
 #!/usr/bin/python3
-""" """
+"""
+export data in the JSON format
+"""
 import json
 import requests
 
 
 def export_all_to_JSON():
+    """where exporting happensto all"""
     users_and_tasks = {}
 
     user = "https://jsonplaceholder.typicode.com/users"

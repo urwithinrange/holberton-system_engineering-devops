@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-""" """
+"""export data in the JSON format"""
 import json
 import requests
 import sys
 
 
 def export_to_JSON(employeeId):
+    """where exporting happens to one"""
     username = ''
     user_dict = {}
     user = "https://jsonplaceholder.typicode.com/users/"
