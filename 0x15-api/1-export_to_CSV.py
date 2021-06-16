@@ -1,17 +1,22 @@
 #!/usr/bin/python3
-
+"""
+export data in csvformat
+"""
 import requests
 import csv
 import sys
 
+
 def save_tasks_to_csv(employeeId):
+    """employee tasks save"""
     username = ''
     all_tasks = []
+    user = "https://jsonplaceholder.typicode.com/users/"
+    todo = "https://jsonplaceholder.typicode.com/users/"
+    userRes = requests.get('{}{}'.format(user, employeeId))
+    todosRes = requests.get('{}{}/todos'.format(todo, employeeId))
 
-    userRes = requests.get('https://jsonplaceholder.typicode.com/users/{}'.format(employeeId))
-    todosRes = requests.get('https://jsonplaceholder.typicode.com/users/{}/todos'.format(employeeId))
-
-    username =  userRes.json().get('username')
+    username = userRes.json().get('username')
     tododsJson = todosRes.json()
 
     for task in tododsJson:
