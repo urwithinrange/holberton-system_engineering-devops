@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# compress mysqldump to a tar
+mysqldump -u root --password="$1" tyrell_corp > backup.sql
+date=`date +%m-%d-%Y`
+tar -czvf $date.tar.gz ./backup.sql
