@@ -27,6 +27,7 @@ def save_tasks_to_csv(employeeId):
         taskrow.append(task.get("title"))
 
         all_tasks.append(taskrow)
+        all_tasks.sort()
 
     with open("{}.csv".format(employeeId), 'w') as csvfile:
         csvwriter = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
