@@ -4,6 +4,20 @@
 #include <sys/types.h>
 
 /**
+ *infinite_while - entry point
+ *
+ *Return: 0 on success
+ */
+int infinite_while(void)
+{
+while (1)
+{
+sleep(1);
+}
+return (0);
+}
+
+/**
  *main - entry point
  *
  *Return: 0 on success
@@ -21,19 +35,5 @@ exit(0);
 printf("Zombie process created, PID: %d\n", pid);
 }
 infinite_while();
-return (0);
-}
-
-/**
- *infinite_while - entry point
- *
- *Return: 0 on success
- */
-int infinite_while(void)
-{
-while (1)
-{
-sleep(1);
-}
 return (0);
 }
