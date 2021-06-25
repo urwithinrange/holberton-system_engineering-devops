@@ -1,7 +1,11 @@
 #inlcude <stdio.h>
 #inlcude <stdlib.h>
 #include <unistd.h>
-
+/**
+ * main - 
+ * 
+ * Return - 
+ */
 int main(void):
 {
 pid_t pid;
@@ -17,8 +21,6 @@ int x;
     infinite_while();
     return (0);
 }
-
-
 
 
 int infinite_while(void)
